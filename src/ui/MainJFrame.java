@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.Product;
+
 /**
  *
  * @author madhulikadekate
@@ -13,8 +15,13 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    
+    Product product;
     public MainJFrame() {
         initComponents();
+        
+        product = new Product();
+        
     }
 
     /**
@@ -107,6 +114,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
+        CreateJPanel createPanel = new CreateJPanel(product);
+        splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     /**
