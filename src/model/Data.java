@@ -27,11 +27,14 @@ public class Data {
     }
     
     public Product addNewData(){
-            Product product = new Product();
-            history.add(product);
-            return product;
+            Product newData = new Product();
+            history.add(newData);
+            return newData;
             
     }
     
+    public void deleteProduct(Product vs){
+    history.remove(vs);
+    }
     
 }

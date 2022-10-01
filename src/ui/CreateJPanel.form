@@ -33,26 +33,24 @@
               </Group>
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="btnsave" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtname" max="32767" attributes="0"/>
-                          <Component id="txtempId" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtage" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtgender" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtdate" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtlevel" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtteam" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtposition" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtnumber" pref="203" max="32767" attributes="0"/>
-                          <Component id="txtemail" pref="203" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="txtemail" alignment="0" pref="244" max="32767" attributes="0"/>
+                      <Component id="txtnumber" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtposition" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtteam" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtlevel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtgender" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtage" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtempId" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtname" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace pref="99" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,9 +109,9 @@
                   <Component id="IbIemail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtemail" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
               <Component id="btnsave" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

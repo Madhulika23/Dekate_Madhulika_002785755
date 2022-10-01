@@ -4,6 +4,8 @@
  */
 package ui;
 
+//import model.Data;
+import model.Data;
 import model.Product;
 
 /**
@@ -15,12 +17,14 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    
-    Product product;
+    Data history;   
+   
     public MainJFrame() {
         initComponents();
         
-        product = new Product();
+       
+        history = new Data();
+        
         
     }
 
@@ -110,11 +114,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDataActionPerformed
         // TODO add your handling code here:
+         DataJPanel dataPanel = new DataJPanel(history);
+        splitPane.setRightComponent(dataPanel); 
     }//GEN-LAST:event_btnDataActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        CreateJPanel createPanel = new CreateJPanel(product);
+        CreateJPanel createPanel = new CreateJPanel(history);
         splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 

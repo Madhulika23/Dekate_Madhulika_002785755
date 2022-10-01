@@ -359,14 +359,18 @@ public class DataJPanel extends javax.swing.JPanel {
         int selectedRowIndex = tblData.getSelectedRow();
         if (selectedRowIndex<0){
             
-            JOptionPane.showMessageDialog(this, "Please select an entry to delete");
+            JOptionPane.showMessageDialog(this, "Please select an entry to delete.");
             return;
             
         }
           DefaultTableModel model = (DefaultTableModel) tblData.getModel();
           Product selectedProduct = (Product) model.getValueAt(selectedRowIndex, 0);
           
-          history.deleteProduct = 
+          history.deleteProduct(selectedProduct);
+          JOptionPane.showMessageDialog(this, "Employee data deleted.");
+          
+          populateTable();
+          
     }//GEN-LAST:event_btnDeleteActionPerformed
 
 

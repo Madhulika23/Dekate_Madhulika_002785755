@@ -5,6 +5,7 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import model.Data;
 import model.Product;
 
 /**
@@ -16,11 +17,12 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    Product product;
-    
-    public CreateJPanel(Product product) {
+       Data history;
+      
+    public CreateJPanel(Data history) {
         initComponents();
-        this.product = product;
+        this.history = history;
+     
     }
 
     /**
@@ -188,21 +190,20 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnsave)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtname)
-                            .addComponent(txtempId, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtage, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtgender, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtdate, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtlevel, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtteam, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtposition, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))
-                        .addGap(91, 91, 91))))
+                        .addGap(29, 29, 29)
+                        .addComponent(btnsave))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                        .addComponent(txtnumber, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtposition, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtteam, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtlevel, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtdate, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtgender, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtage, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtempId, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtname, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,9 +250,9 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IbIemail)
                     .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(btnsave)
-                .addGap(25, 25, 25))
+                .addGap(24, 24, 24))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtage, txtdate, txtemail, txtempId, txtgender, txtlevel, txtname, txtnumber, txtposition, txtteam});
@@ -300,18 +301,52 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         // TODO add your handling code here:
-        product.setName(txtname.getText());
-        product.setEmpId(txtempId.getText());
-        product.setAge(txtage.getText());
-        product.setGender(txtgender.getText());
-        product.setsDate(txtdate.getText());
-        product.setLevel(txtlevel.getText());
-        product.settInfo(txtteam.getText());
-        product.setpTitle(txtposition.getText());
-        product.setNum(txtnumber.getText());
-        product.setEmail(txtemail.getText());       
+
+
+        String name = txtname.getText();
+        String empId = txtempId.getText();
+        String age = txtage.getText();
+        String gender = txtgender.getText();
+        String sDate = txtdate.getText();
+        String level = txtlevel.getText();
+        String tInfo = txtposition.getText();
+        String pTitle = txtteam.getText();
+        String num = txtnumber.getText();
+        String email = txtemail.getText();
         
-        JOptionPane.showMessageDialog(this, "Information Saved.");        
+        
+        Product vs = history.addNewData();
+        
+        vs.setName(name);
+        vs.setEmpId(empId);
+        vs.setAge(age);
+        vs.setGender(gender);
+        vs.setsDate(sDate);
+        vs.setLevel(level);
+        vs.settInfo(tInfo);
+        vs.setpTitle(pTitle);
+        vs.setNum(num);
+        vs.setEmail(email);
+        
+        JOptionPane.showMessageDialog(this, "Information Saved.");    
+        
+        txtname.setText("");
+        txtempId.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtdate.setText("");
+        txtlevel.setText("");
+        txtteam.setText("");
+        txtposition.setText("");
+        txtnumber.setText("");
+        txtemail.setText(""); 
+        
+        
+        
+        
+        
+      
+        
     }//GEN-LAST:event_btnsaveActionPerformed
 
 
