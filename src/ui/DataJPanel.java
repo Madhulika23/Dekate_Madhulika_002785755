@@ -61,6 +61,7 @@ public class DataJPanel extends javax.swing.JPanel {
         txtemail = new javax.swing.JTextField();
         txtname = new javax.swing.JTextField();
         IbIname = new javax.swing.JLabel();
+        btnUpdate = new javax.swing.JButton();
 
         Title.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -77,7 +78,7 @@ public class DataJPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Name", "Empolyee ID", "Position Title"
+                "Name", "Empolyee ID", "Position title"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -86,6 +87,14 @@ public class DataJPanel extends javax.swing.JPanel {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tblData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDataMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblDataMouseEntered(evt);
             }
         });
         jScrollPane1.setViewportView(tblData);
@@ -206,6 +215,14 @@ public class DataJPanel extends javax.swing.JPanel {
         IbIname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         IbIname.setText("Name:");
 
+        btnUpdate.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -220,7 +237,9 @@ public class DataJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnView)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnUpdate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnDelete))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
@@ -260,11 +279,12 @@ public class DataJPanel extends javax.swing.JPanel {
                 .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
-                    .addComponent(btnView))
-                .addGap(88, 88, 88)
+                    .addComponent(btnView)
+                    .addComponent(btnUpdate))
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -394,6 +414,52 @@ public class DataJPanel extends javax.swing.JPanel {
           
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) tblData.getModel();
+         if(tblData.getSelectedRowCount() == 1) {
+             
+        String name = txtname.getText();
+        String empId = txtempId.getText();
+       String pTitle = txtposition.getText();
+        
+        model.setValueAt(name, tblData.getSelectedRow(), 0);
+        model.setValueAt(empId, tblData.getSelectedRow(), 1);
+        model.setValueAt(pTitle, tblData.getSelectedRow(), 2);
+
+        
+        JOptionPane.showMessageDialog(this, "Updated Successfully.");
+        
+        } else{
+             if(tblData.getRowCount() == 0){
+               JOptionPane.showMessageDialog(this, "Table is Empty.");  
+             }else{
+                 JOptionPane.showMessageDialog(this, "Select Single Row for Update."); 
+             }
+         }
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void tblDataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblDataMouseEntered
+
+    private void tblDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblData.getModel();
+        
+        String tblName = model.getValueAt(tblData.getSelectedRow(), 0).toString();
+        String tblEmployeeId = model.getValueAt(tblData.getSelectedRow(), 1).toString();
+        String tblPositionTitle = model.getValueAt(tblData.getSelectedRow(), 2).toString();
+
+        
+        txtname.setText(tblName);
+        txtempId.setText(tblEmployeeId);   
+        txtposition.setText(tblPositionTitle);
+    
+        
+    }//GEN-LAST:event_tblDataMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IbIage;
@@ -408,6 +474,7 @@ public class DataJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel IbIteam;
     private javax.swing.JLabel Title;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblData;
