@@ -223,7 +223,7 @@ public class DataJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnDelete))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(IbIdate)
                             .addComponent(IbIgender)
@@ -237,7 +237,7 @@ public class DataJPanel extends javax.swing.JPanel {
                             .addComponent(txtage, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtempId, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(IbIemail)
                             .addComponent(IbInumber)
@@ -312,6 +312,27 @@ public class DataJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = tblData.getSelectedRow();
+        if (selectedRowIndex<0){
+            
+            JOptionPane.showMessageDialog(this, "Please select an entry to delete.");
+            return;
+            
+        }
+          DefaultTableModel model = (DefaultTableModel) tblData.getModel();
+          Product selectedProduct = (Product) model.getValueAt(selectedRowIndex, 0);
+          
+          txtname.setText(String.valueOf(selectedProduct.getName()));
+          txtempId.setText(String.valueOf(selectedProduct.getEmpId()));
+          txtage.setText(String.valueOf(selectedProduct.getAge()));
+          txtgender.setText(String.valueOf(selectedProduct.getGender()));
+          txtdate.setText(String.valueOf(selectedProduct.getsDate()));
+          txtlevel.setText(String.valueOf(selectedProduct.getLevel()));
+          txtteam.setText(String.valueOf(selectedProduct.gettInfo()));
+          txtposition.setText(String.valueOf(selectedProduct.getpTitle()));
+          txtnumber.setText(String.valueOf(selectedProduct.getNum()));
+          txtemail.setText(String.valueOf(selectedProduct.getEmail()));
+          
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void txtempIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtempIdActionPerformed
