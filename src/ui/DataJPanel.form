@@ -17,54 +17,65 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="Title" alignment="1" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="59" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="IbIdate" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIgender" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIage" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIempId" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIname" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane1" pref="752" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="IbIdate" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="IbIgender" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="IbIage" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="IbIempId" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="IbIname" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="IbIsearch" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtsearch" pref="155" max="32767" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtgender" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtage" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtempId" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtname" alignment="0" pref="155" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="IbIemail" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IbInumber" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IbIposition" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IbIteam" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IbIlevel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="txtnumber" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtposition" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtteam" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtlevel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtemail" min="-2" pref="155" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnView" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtgender" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtage" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtempId" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtname" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="IbIemail" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbInumber" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIposition" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIteam" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="IbIlevel" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="txtnumber" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtposition" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtteam" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtlevel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtemail" min="-2" pref="155" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="142" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnView" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,15 +86,17 @@
               <Component id="Title" min="-2" pref="26" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="175" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnView" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtsearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IbIsearch" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace pref="58" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="IbIlevel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtlevel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -109,7 +122,7 @@
                           <Component id="txtemail" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="IbIname" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtname" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -136,7 +149,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -373,6 +386,21 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtsearch">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtsearchKeyPressed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtsearchKeyReleased"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="IbIsearch">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="14" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Search:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

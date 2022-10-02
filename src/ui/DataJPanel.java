@@ -5,7 +5,9 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import model.Data;
 import model.Product;
 
@@ -62,6 +64,8 @@ public class DataJPanel extends javax.swing.JPanel {
         txtname = new javax.swing.JTextField();
         IbIname = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
+        txtsearch = new javax.swing.JTextField();
+        IbIsearch = new javax.swing.JLabel();
 
         Title.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -223,53 +227,72 @@ public class DataJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtsearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtsearchKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtsearchKeyReleased(evt);
+            }
+        });
+
+        IbIsearch.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        IbIsearch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IbIsearch.setText("Search:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IbIdate)
-                    .addComponent(IbIgender)
-                    .addComponent(IbIage)
-                    .addComponent(IbIempId)
-                    .addComponent(IbIname))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtdate, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtgender, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtage, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtempId, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IbIemail)
-                    .addComponent(IbInumber)
-                    .addComponent(IbIposition)
-                    .addComponent(IbIteam)
-                    .addComponent(IbIlevel))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtnumber, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtposition, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtteam, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtlevel, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(142, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView)
-                .addGap(18, 18, 18)
-                .addComponent(btnUpdate)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addGap(247, 247, 247))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IbIdate, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(IbIgender, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(IbIage, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(IbIempId, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(IbIname, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(IbIsearch, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtsearch, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtdate, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtgender, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtage, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtempId, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)))
+                        .addGap(84, 84, 84)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(IbIemail)
+                                    .addComponent(IbInumber)
+                                    .addComponent(IbIposition)
+                                    .addComponent(IbIteam)
+                                    .addComponent(IbIlevel))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtnumber, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtposition, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtteam, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtlevel, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(68, 68, 68))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnView)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUpdate)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnDelete)
+                                .addContainerGap())))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,12 +301,14 @@ public class DataJPanel extends javax.swing.JPanel {
                 .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
                     .addComponent(btnView)
-                    .addComponent(btnUpdate))
-                .addGap(64, 64, 64)
+                    .addComponent(btnUpdate)
+                    .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IbIsearch))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -325,7 +350,7 @@ public class DataJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(IbIdate)
                             .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGap(37, 37, 37))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -334,7 +359,7 @@ public class DataJPanel extends javax.swing.JPanel {
         int selectedRowIndex = tblData.getSelectedRow();
         if (selectedRowIndex<0){
             
-            JOptionPane.showMessageDialog(this, "Please select an entry to delete.");
+            JOptionPane.showMessageDialog(this, "Please select an entry to view empoyee database.");
             return;
             
         }
@@ -458,6 +483,20 @@ public class DataJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_tblDataMouseClicked
 
+    private void txtsearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsearchKeyPressed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblData.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
+        tblData.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(txtsearch.getText().trim()));
+        
+ 
+    }//GEN-LAST:event_txtsearchKeyPressed
+
+    private void txtsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsearchKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsearchKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IbIage;
@@ -469,6 +508,7 @@ public class DataJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel IbIname;
     private javax.swing.JLabel IbInumber;
     private javax.swing.JLabel IbIposition;
+    private javax.swing.JLabel IbIsearch;
     private javax.swing.JLabel IbIteam;
     private javax.swing.JLabel Title;
     private javax.swing.JButton btnDelete;
@@ -485,6 +525,7 @@ public class DataJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtnumber;
     private javax.swing.JTextField txtposition;
+    private javax.swing.JTextField txtsearch;
     private javax.swing.JTextField txtteam;
     // End of variables declaration//GEN-END:variables
 
