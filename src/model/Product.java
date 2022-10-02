@@ -101,7 +101,10 @@ public class Product {
         this.email = email;
     }
     
-    
+    @Override
+    public String toString(){
+        return name;
+    }
 
 }
 

@@ -78,7 +78,7 @@ public class DataJPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Name", "Empolyee ID", "Position title"
+                "Name", "Empolyee ID", "Position Title"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -232,59 +232,58 @@ public class DataJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDelete))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(IbIdate)
-                            .addComponent(IbIgender)
-                            .addComponent(IbIage)
-                            .addComponent(IbIempId)
-                            .addComponent(IbIname))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtdate, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtgender, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtage, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtempId, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(IbIemail)
-                            .addComponent(IbInumber)
-                            .addComponent(IbIposition)
-                            .addComponent(IbIteam)
-                            .addComponent(IbIlevel))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtnumber, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtposition, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtteam, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtlevel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(36, 36, 36))
+                    .addComponent(IbIdate)
+                    .addComponent(IbIgender)
+                    .addComponent(IbIage)
+                    .addComponent(IbIempId)
+                    .addComponent(IbIname))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtdate, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtgender, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtage, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtempId, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(84, 84, 84)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(IbIemail)
+                    .addComponent(IbInumber)
+                    .addComponent(IbIposition)
+                    .addComponent(IbIteam)
+                    .addComponent(IbIlevel))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtnumber, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtposition, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtteam, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtlevel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(142, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnView)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdate)
+                .addGap(18, 18, 18)
+                .addComponent(btnDelete)
+                .addGap(247, 247, 247))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
                     .addComponent(btnView)
                     .addComponent(btnUpdate))
-                .addGap(69, 69, 69)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -326,7 +325,7 @@ public class DataJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(IbIdate)
                             .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -421,7 +420,7 @@ public class DataJPanel extends javax.swing.JPanel {
              
         String name = txtname.getText();
         String empId = txtempId.getText();
-       String pTitle = txtposition.getText();
+        String pTitle = txtposition.getText();
         
         model.setValueAt(name, tblData.getSelectedRow(), 0);
         model.setValueAt(empId, tblData.getSelectedRow(), 1);
@@ -449,13 +448,12 @@ public class DataJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblData.getModel();
         
         String tblName = model.getValueAt(tblData.getSelectedRow(), 0).toString();
-        String tblEmployeeId = model.getValueAt(tblData.getSelectedRow(), 1).toString();
-        String tblPositionTitle = model.getValueAt(tblData.getSelectedRow(), 2).toString();
-
+        String tblEmpId = model.getValueAt(tblData.getSelectedRow(), 1).toString();
+        String tblPosition = model.getValueAt(tblData.getSelectedRow(), 2).toString();
         
         txtname.setText(tblName);
-        txtempId.setText(tblEmployeeId);   
-        txtposition.setText(tblPositionTitle);
+        txtempId.setText(tblEmpId);
+        txtposition.setText(tblPosition);
     
         
     }//GEN-LAST:event_tblDataMouseClicked
