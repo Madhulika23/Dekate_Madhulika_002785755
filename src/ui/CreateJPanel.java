@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import model.Data;
 import model.Product;
@@ -118,6 +119,11 @@ public class CreateJPanel extends javax.swing.JPanel {
                 txtageActionPerformed(evt);
             }
         });
+        txtage.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtageKeyPressed(evt);
+            }
+        });
 
         txtgender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +158,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtnumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnumberActionPerformed(evt);
+            }
+        });
+        txtnumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtnumberKeyPressed(evt);
             }
         });
 
@@ -348,6 +359,50 @@ public class CreateJPanel extends javax.swing.JPanel {
       
         
     }//GEN-LAST:event_btnsaveActionPerformed
+
+    private void txtageKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtageKeyPressed
+        // TODO add your handling code here:
+        
+        String num = txtage.getText();
+        int length = num.length();
+        char c = evt.getKeyChar();
+        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+             if(length<3){
+                 txtage.setEditable(true);
+             }else{
+                 txtage.setEditable(false);
+             }
+        }else {
+            if(evt.getExtendedKeyCode() ==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() ==KeyEvent.VK_DELETE){
+            txtage.setEditable(true);
+            
+        }else{
+                txtage.setEditable(false);
+                }
+        }
+    
+    }//GEN-LAST:event_txtageKeyPressed
+
+    private void txtnumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumberKeyPressed
+        // TODO add your handling code here:
+         String num = txtnumber.getText();
+        int length = num.length();
+        char c = evt.getKeyChar();
+        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+             if(length<10){
+                 txtnumber.setEditable(true);
+             }else{
+                 txtnumber.setEditable(false);
+             }
+        }else {
+            if(evt.getExtendedKeyCode() ==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() ==KeyEvent.VK_DELETE){
+            txtnumber.setEditable(true);
+            
+        }else{
+                txtnumber.setEditable(false);
+                }
+        }
+    }//GEN-LAST:event_txtnumberKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
