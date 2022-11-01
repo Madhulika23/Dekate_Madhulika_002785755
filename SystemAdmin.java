@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author adityaraj
+ * @author madhulikadekate
  */
 public class SystemAdmin {
     private List<City> cities;

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author adityaraj
+ * @author madhulikadekate
  */
 public class CommunityAdmin {
     

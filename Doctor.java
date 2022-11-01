@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author adityaraj
+ * @author madhulikadekate
  */
 public class Doctor {
     private String doctorId;

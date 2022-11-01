@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author adityaraj
+ * @author madhulikadekate
  */
 public class PatientDirectory {
     private ArrayList<Patient> patientDirectory;
@@ -39,16 +39,7 @@ public class PatientDirectory {
     }
 
     public Patient getPatient(String text) {
-        /*
-        Doctor d = new Doctor();
-        for(Doctor cd : doctorDirectory){
-            if(cd.getDoctorId().equals(text)){
-                d = cd;
-                break;
-            }
-        }
-        return d;
-        */
+        
         Patient p = new Patient();
         for(Patient ps : patientDirectory){
             if(ps.getUsername().equals(text)){

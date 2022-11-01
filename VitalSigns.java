@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author adityaraj
+ * @author madhuliakdekate
  */
 public class VitalSigns {
     
